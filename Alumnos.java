@@ -56,7 +56,7 @@ public class Alumnos {
         return promedio;
     }
 
-    public void setPromedio(double promedio) {
+    public void setPromedio() {
         this.promedio = (this.estructuras + this.ingles + this.iot) / 3;
     }
 
