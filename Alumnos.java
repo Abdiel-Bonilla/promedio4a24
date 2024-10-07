@@ -65,5 +65,4 @@ public class Alumnos {
         return "Alumnos [matricula=" + matricula + ", nombre=" + nombre + ", promedio=" + promedio + "]";
     }
 
-    
 }

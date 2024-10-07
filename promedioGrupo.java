@@ -33,19 +33,25 @@ public class promedioGrupo {
             System.out.println("Escribe calficacion de iot: ");
             entrada = bufer.readLine();
             a.setIot(Double.parseDouble(entrada));
+            a.setPromedio();
+            //agregando un alumno al arreglo
+            alumnos[i] = a;
 
+        }
+    }
+
+    public static void imprimirAlumnos(){
+        System.out.println("Contenido del arreglo Alumnos: ");
+        for(Alumnos a : alumnos){
+            System.out.println("-------------------------------------------");
+            System.out.println("Información del alumno: ");
+            System.out.println(a.toString());
         }
     }
 
     public static void main(String[] args) throws IOException {
         int n; //tamaño del grupo
-        
-        // double [] calificaciones; //calificaciones de cada alumno
-        // double suma =0; //para sumar las calificaciones
-        // double promedio; //promedio del grupo
-        
-
-
+        double promedio; //promedio del grupo
 
         System.out.println("Programa para calcular promedio de un grupo");
         System.out.println("------------------------------------------------");
@@ -56,17 +62,11 @@ public class promedioGrupo {
 
         //Construiur el arreglo alumnos
         alumnos = new Alumnos[n];
+        //Intruducir informcion de los alumnos
+        leerAlumnos();
+        //Mostrar informacion
+        imprimirAlumnos();
 
-
-        // calificaciones = new double[n];//costruccion del arreglo
-
-        //pedir cada calificaciones y acumularlas
-        // for(int i = 0; i< calificaciones.length; i++){
-        //     System.out.println("Escribe la calificacion del estudiante [" + (i+1) + "]:");
-        //     entrada = bufer.readLine();
-        //     calificaciones[i] = Double.parseDouble(entrada);
-        //     suma += calificaciones[i];
-        // }
 
         //obtener el promedio
         // promedio = suma / n;
@@ -79,4 +79,5 @@ public class promedioGrupo {
     //     System.out.println("---------------------------------------");
     //     System.out.println("El promedio de grupo es: " + promedio);
     // }
+}
 }
